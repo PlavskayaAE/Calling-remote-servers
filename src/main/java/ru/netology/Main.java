@@ -30,7 +30,7 @@ public class Main {
                 response.getEntity().getContent(), new
                         TypeReference<>() {
                         });
-        List<Candidate> result = candidates.stream().filter(value -> value.getUpvotes() != null).toList();
+        List<Candidate> result = candidates.stream().filter(value -> value.getUpvotes() != null && Integer.parseInt(value.getUpvotes()) > 0).toList();
         result.forEach(System.out::println);
 
     }
